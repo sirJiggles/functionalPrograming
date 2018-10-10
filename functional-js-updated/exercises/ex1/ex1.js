@@ -1,12 +1,14 @@
-function foo(x) {
-	y++;
-	z = x * y;
+function bar(x, y) {
+  let z;
+  foo(x);
+  return [x, y];
+
+  function foo(x) {
+    y++;
+    z = x * y;
+  }
 }
 
-var y = 5, z;
+bar(20, 5);
 
-foo(20);
-z;		// 120
-
-foo(25);
-z;		// 175
+bar(25, 6);
