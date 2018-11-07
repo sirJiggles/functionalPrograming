@@ -12,11 +12,7 @@ function half(x) {
 }
 
 function compose(...args) {
-  return function(val) {
-    return [...args].reduceRight(function(prev, next) {
-      return next(prev);
-    }, val);
-  };
+  return pipe(...args.reverse());
 }
 function pipe(...args) {
   return function(val) {
